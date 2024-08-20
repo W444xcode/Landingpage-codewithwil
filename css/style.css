@@ -46,6 +46,46 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.client-section {
+  margin: 2rem 0; /* Space above and below the section */
+}
+
+.client-background {
+  background: rgba(255, 255, 255, 0.5); /* Transparent background for the section */
+  padding: 2rem 0; /* Padding around the content */
+  position: relative;
+}
+
+.client-background h2 {
+  text-align: center; /* Center the heading text */
+  margin-bottom: 1rem; /* Space between heading and logos */
+  color: #333; /* Adjust text color if needed */
+  font-size: 1.5rem; /* Adjust size of heading */
+}
+
+.logo-client-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the logos horizontally */
+}
+
+.logo-client {
+  display: flex;
+  align-items: center; /* Center the logos vertically */
+  width: 100%; /* Full width to fill the container */
+  justify-content: center; /* Center the content */
+}
+
+.logo-client img {
+  height: 5rem; /* Adjust logo height */
+  width: 100%;  /* Maintain aspect ratio */
+  margin-right: 1rem; /* Space between logos */
+  object-fit: contain; /* Ensure the logo maintains aspect ratio */
+}
+
+
 /* animations start*/
 
 /* .sec-1 animasi muncul dari kiri */
@@ -327,6 +367,7 @@ header.sticky .hamburger-menu .bar {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
+  margin-bottom: -150px;
 }
 
 .big-title {
@@ -387,6 +428,10 @@ header.sticky .hamburger-menu .bar {
 }
 
 @media screen and (max-width: 870px) {
+  .showcase-area .container {
+    margin-bottom: 0;
+  }
+  
   .text {
     font-size: 2rem;
   }
@@ -791,17 +836,16 @@ header.sticky .hamburger-menu .bar {
 
 .isi img {
   width: 100%;
-  height: 100%; /* Tinggi yang diinginkan */
-  object-fit: cover; /* Mengisi area tanpa merubah proporsi gambar */
-  object-position: center; /* Posisikan gambar di tengah jika dipotong */
-  transition: transform 0.3s ease; /* Transition untuk efek hover */
+  height: 100%; 
+  object-fit: cover; 
+  object-position: center; 
+  transition: transform 0.3s ease; 
 }
 
 .galery .isi:hover img {
-  transform: scale(1.1); /* Zoom in slightly on hover */
-  width: 100%;
-  height: 100%;
-  filter: brightness(0.9); /* Optional: Sedikit menggelapkan gambar saat hover */
+  transform: scale(1.1); 
+  transition: 0.5s ;
+  filter: brightness(0.9); 
 }
 
 
@@ -950,35 +994,38 @@ header.sticky .hamburger-menu .bar {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .contact-details form {
-  width: 670px;
-  height: 400px;
+  width: 800px; /* Lebarkan form */
+  max-width: 100%; /* Pastikan form tidak melebihi lebar kontainer */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
-  flex-wrap: wrap;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 20px;
   margin-bottom: 50px;
 }
 
 .contact-details form h1 {
   color: var(--darkTwo);
   font-weight: 500;
-  margin-top: 20px;
-  width: 500px;
+  width: 100%;
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.contact-details form input {
-  width: 290px;
-  height: 40px;
+.contact-details form input,
+.contact-details form textarea {
+  width: 100%;
+  max-width: 700px; /* Atur lebar maksimal input dan textarea */
   padding-left: 10px;
   outline: none;
   border: none;
@@ -986,37 +1033,18 @@ header.sticky .hamburger-menu .bar {
   margin-bottom: 10px;
   background: none;
   border-bottom: 2px solid var(--darkTwo);
+  color: var(--darkTwo);
 }
 
 .contact-details form input::placeholder {
   color: var(--darkTwo);
 }
 
-.contact-details form #Subject,
-.contact-details form #mobile {
-  margin-left: 20px;
-}
-
-.contact-details form h4 {
-  color: var(--darkTwo);
-  font-weight: 300;
-  width: 600px;
-  margin-top: 20px;
-}
-
 .contact-details form textarea {
-  background: none;
-  border: none;
-  border-bottom: 2px solid var(--darkTwo);
-  color: var(--darkTwo);
-  font-weight: 200;
-  font-size: 15px;
+  min-height: 100px; /* Perlebar textarea */
+  max-height: 150px;
   padding: 10px;
-  outline: none;
-  min-width: 600px;
-  max-width: 600px;
-  min-height: 80px;
-  max-height: 80px;
+  resize: vertical;
 }
 
 textarea::-webkit-scrollbar {
@@ -1027,8 +1055,9 @@ textarea::-webkit-scrollbar-thumb {
   background-color: rgba(194, 194, 194, 0.713);
 }
 
-.field .item {
-  border-bottom: 2px solid var(--darkTwo);
+.field {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .field.error .item {
@@ -1036,10 +1065,10 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 .field .error-text {
-  font-size: 20px;
+  font-size: 15px;
   color: #d93025;
   text-align: left;
-  margin: -5px 0 10px;
+  margin-top: 5px;
   display: none;
 }
 
@@ -1055,10 +1084,8 @@ textarea::-webkit-scrollbar-thumb {
   font-weight: 600;
   font-size: 20px;
   color: #333;
-  width: 100px;
-  padding: 0;
-  margin-right: 500px;
-  margin-bottom: 30px;
+  width: 150px; 
+  padding: 10px; 
   transition: 0.3s;
 }
 
@@ -1066,59 +1093,71 @@ textarea::-webkit-scrollbar-thumb {
   opacity: 0.7;
 }
 
+
 @media screen and (max-width: 870px) {
   .contact-details form {
-    display: flex;
     max-width: 100%;
     height: auto;
-
   }
 
   .contact-details form #subject,
   .contact-details form #mobile {
-    margin-left: 20px;
+    margin-left: 0; /* Hapus margin kiri pada input tertentu */
   }
+
   .contact-details form h4 {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Sesuaikan ukuran font */
   }
-
 }
 
-@media screen and (max-width: 700px){
-  .contact-details form{
+/* Tampilan Mobile: Lebar Layar Maksimum 700px */
+@media screen and (max-width: 700px) {
+  .contact-details form {
     max-width: 80%;
-    justify-content: center;
-    align-items: center;
-    margin: 0 80px 0;
+    margin: 0 20px; /* Atur margin kiri dan kanan */
+  }
 
+  .contact-details form input,
+  .contact-details form textarea {
+    width: 100%; /* Lebar input dan textarea 100% dari kontainer */
+  }
+
+  .contact-details form button {
+    width: 100%; /* Lebar button 100% dari kontainer */
+    margin-right: 0; /* Hapus margin kanan pada button */
   }
 }
 
-@media screen and (max-width:680px) {
-  .contact-details form{
+/* Tampilan Mobile: Lebar Layar Maksimum 680px */
+@media screen and (max-width: 680px) {
+  .contact-details form {
     max-width: 400px;
-
   }
-   .contact-details form #subject,
-   .contact-details form #mobile {
+
+  .contact-details form #subject,
+  .contact-details form #mobile {
     margin-left: 0;
   }
-  .contact-details h4{
-    text-align: center;
+
+  .contact-details form h4 {
+    text-align: center; /* Pusatkan teks */
   }
-  .contact-details form textarea{
-    min-width: 290px;
-    max-width: 300px;
-    min-height: 40px;
-    max-height: 40px;
+
+  .contact-details form textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 60px; /* Sesuaikan tinggi textarea */
+    max-height: 100px;
   }
-  .contact-details form button{
-    margin-right: 250px;
+
+  .contact-details form button {
+    margin-right: 0; /* Hapus margin kanan pada button */
   }
 }
 
-@media screen and (max-width: 436px){
-  .contact-details form{
+/* Tampilan Mobile: Lebar Layar Maksimum 436px */
+@media screen and (max-width: 436px) {
+  .contact-details form {
     max-width: 300px;
   }
 
@@ -1126,19 +1165,16 @@ textarea::-webkit-scrollbar-thumb {
   .contact-details form #subject,
   .contact-details form #email,
   .contact-details form #mobile {
-   width: 270px;
- }
- .contact-details form textarea{
-  min-width: 270px;
-  max-width: 270px;
-  min-height: 40px;
-  max-height: 40px;
-}
-.contact-details form button{
-  margin-right: 170px;
-}
-}
+    width: 100%; /* Lebar 100% dari kontainer */
+  }
 
+  .contact-details form textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 60px;
+    max-height: 100px;
+  }
+}
 /* contact end  */
 
 /* footer start  */
@@ -1337,11 +1373,7 @@ footer .wave#wave4{
   min-height: 100vh;
   margin-bottom: 100px;
 }
-@media (max-width: 992px) {
-  .project-section {
-    margin-top:-70px;
-  }
-}
+
 
 .project-start{
   padding: 0;
@@ -1518,4 +1550,62 @@ footer .wave#wave4{
   margin: 0 20px;
   text-align: justify;
   max-width: 1000px;
+}
+
+#projectImageSlider {
+  background-color: #f8f9fa; /* Light gray background */
+  height: 400px; /* Default height for larger screens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hide overflow to avoid image spill */
+}
+
+.carousel-inner {
+  height: 100%; /* Ensure the inner container takes the full height */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure images cover the area without stretching */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #6c757d; /* Gray color for control icons */
+}
+
+/* Change the color of the inactive indicators */
+.carousel .carousel-indicators button {
+  background-color: #6c757d; /* Gray color for inactive indicators */
+}
+
+/* Change the color of the active indicator */
+.carousel-indicators .active {
+  background-color: #343a40; /* Darker gray for active indicator */
+}
+
+
+.carousel-indicators button {
+  background-color: #6c757d; /* Gray color for inactive indicators */
+}
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  #projectImageSlider {
+    height: 300px; /* Adjust height for medium-sized screens */
+  }
+}
+
+@media (max-width: 576px) {
+  #projectImageSlider {
+    height: 290px; /* Adjust height for small screens */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #6c757d; /* Ensure control icons are visible on small screens */
+    width: 30px; /* Smaller control icons */
+    height: 30px;
+  }
 }
