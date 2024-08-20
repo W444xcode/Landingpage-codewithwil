@@ -7,6 +7,8 @@
     <title>WillDev | Landingpage</title>
     <link rel="stylesheet" href="css/style.css" />
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   </head>
   <body>
     <!-- function dark/light mode start  -->
@@ -19,7 +21,7 @@
           <div class="container">
             <div class="logo">
               <img src="./img/logo.png" alt="Logo" />
-              <h3>Willcode</h3>
+              <h3>codewithwil</h3>
             </div>
 
             <div class="links">
@@ -49,21 +51,19 @@
         <div class="showcase-area" id="home">
           <div class="container">
             <div class="left">
-              <img src="./img/person.png" alt="Person Image" class="person" />
+              <img src="./img/person.png" alt="Person Image" class="home-person " />
             </div>
             <div class="right">
-              <h2 class="text" data-text="Willcode">
-                Willcode
+              <h2 class="text" data-text="willy randika Wardhoyo">
+                <span class="hidden-text">willy randika Wardhoyo</span>
               </h2>
-              
-
               <div class="big-title">
                 <h1>I'm <span id="element"></span></h1>
               </div>
          
-              <p class="txt">Selamat datang di web saya!</p>
+              <p class="txt">Wellcome in my web portofolio!</p>
               <div class="cta">
-                <a href="#" class="button-home">Get started</a>
+                <a href="#about" class="button-home">Get started</a>
               </div>
             </div>
           </div>
@@ -86,22 +86,21 @@
                   <div class="row">
                     <div class="col-lg-6 d-flex align-items-center">
                       <div class="box">
-                      <img src="img/person.jpg" class="person"  alt="" />
+                        <img src="img/person.jpg" class="person" alt="" />
+                      </div>                      
+                  </div>
+                  <div class="col-lg-6 pt-4 pt-lg-0 content">
+                    <div class="content-wrapper">
+                      <h3>Tentang saya</h3>
+                      <p>
+                        Nama saya Willy Randika Wardhoyo, Saya Seorang pelajar SMK MVP ARS INTERNASIONAL BANDUNG,
+                        Kelas 12. Saya adalah Fullstack web developer/software engineer, Singkatnya saya mampu membuat
+                        sebuah aplikasi berbasis website. Saya juga senang belajar hal hal baru dan dapat memahami suatu 
+                        materi baru dengan cepat dan efektif. 
+                      </p>
                     </div>
                   </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 content">
-                      <h3>Hello selamat datang di website saya!</h3>
-                      <p class="">
-                        Nama saya willy, saya adalah Full Stack developer. Saya tinggal di bandung dan
-                        masih berstatus pelajar SMK. Kunjungi beberapa projek yang pernah saya buat
-                        Jika ada hal yang ingin di tanyakan bisa menghubungi saya lewat contact
-                      </p>
-                     
-                      <a href="#" style="--clr: #1e9bff">
-                        Learn more
-                      </a>
-                   
-                    </div>
+                  
                   </div>
                 </div>
               </div>
@@ -128,27 +127,27 @@
             </div>
             <div class="galery">
               <div class="isi website">
-                <img src="img/galery/web1.jpg" style="--i:0">
+                <img src="img/galery/allincompany.png" style="--i:0">
                 <div class="overlay">
-                  <a href="project.html">View more</a>
+                  <a href="project1.html">View more</a>
                 </div>
               </div>
               
-              <div class="isi soon">
-                <img src="img/galery/web2.jpg" style="--1:1">
+              <div class="isi website">
+                <img src="img/galery/schoolify.jpeg" style="--i:1">
                 <div class="overlay">
                   <a href="project2.html">View more</a>
                 </div>
               </div>
-
-              <div class="isi soon">
-                <img src="img/galery/web2.jpg" style="--i:2">
+            
+              <div class="isi website">
+                <img src="img/galery/sunnybite.png" style="--i:2">
                 <div class="overlay">
-                  <a href="project2.html">View more</a>
+                  <a href="project3.html">View more</a>
                 </div>
               </div>
-         
             </div>
+            
           </div>
         </div>
       </div>
@@ -157,19 +156,32 @@
 
         <!-- service start  -->
         <section class="sec-4">
-    
           <div class="container-fluid">
             <div class="row">
               <div class="service" id="service">
-                <!-- <div class="showRight-animate" style="position: relative;"></div> -->
                 <div class="card">
                   <span class="showRight-animate" style="--i:2"></span>
                   <div class="content">
-         
-                    <i class="fa fa-globe "></i>
+                    <i class="fa fa-code "></i>
                     <h3>Web developer</h3>
-                    <p>Web Developer adalah perancang sebuah website / www. </p>
-                    <a href="service-page.html">read more</a>
+                    <p>Saya merupakan seorang web developer, saya membuat berbagai jenis aplikasi berbasis website. </p>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <span class="showRight-animate" style="--i:2"></span>
+                  <div class="content">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <h3>Software engineer</h3>
+                    <p>selain developer saya juga merupakan seorang software engineer yang bertugas untuk menganalisa,merancang dan memecahkan suatu masalah. </p>
+                  </div>
+                </div>
+                <div class="card">
+                  <span class="showRight-animate" style="--i:2"></span>
+                  <div class="content">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Database analyst</h3>
+                    <p>Dan yang terakhir saya merupakan database analyst, yang berperan untuk menganalisa kebutuhan suatu database. </p>
                   </div>
                 </div>
               </div>
@@ -193,26 +205,25 @@
                  <h1>Contact Us Form</h1>
                  <div class="field ">
                  <input class="item " type="text" id="Name" name="Name" placeholder="your Name" >
-                 <div class="error-text">nama tidak boleh kosong</div>
+                 <div class="error-text">name cannot be empty</div>
                 </div>
                 <div class="field">
-                 <input class="item " type="text" id="Subject" name="subject" placeholder="Subject" >
-                 <div class="error-text">subjek tidak boleh kosong</div>
+                 <input class="item " type="text" id="subject" name="subject" placeholder="Subject" >
+                 <div class="error-text">the subject cannot be empty</div>
                 </div>
                 <div class="field">
                  <input class="item " type="email" id="email" name="email" placeholder="Email" >
-                 <div class="error-text email">email tidak boleh kosong</div>
+                 <div class="error-text email">Email cannot be empty</div>
                 </div>
                 <div class="field">
-                 <input class="item " type="text" id="mobile" name="mobile" placeholder="Mobile" >
-                 <div class="error-text">nomer telepon tidak boleh kosong</div>
+                 <input class="item " type="text" id="mobile" name="mobile" placeholder="Phone" >
+                 <div class="error-text">The telephone number cannot be empty</div>
                 </div>
                  <h4>Type Your Message Here...</h4>
                  <div class="field">
                  <textarea  id="message" name="message" class="item"></textarea>
-                 <div class="error-text">pesan tidak boleh kosong</div>
+                 <div class="error-text">the message cannot be empty</div>
                 </div>
-   
                  <button type="submit" class="submit" >submit</button>
                
              </form>
@@ -235,9 +246,9 @@
     <div class="wave" id="wave4"></div>
   </div>
   <ul class="social_icon">
-  <li><a href="https://www.instagram.com/willy_randika/" class="fab fa-instagram"></a></li>
-  <li><a href="https://github.com/W444xcode" class="fab fa-github"></a></li>
-  <li><a href="https://twitter.com/willy_randika" class="fab fa-twitter"></a></li>
+  <li><a href="https://www.instagram.com/codewithly/" class="fab fa-instagram"></a></li>
+  <li><a href="https://github.com/codewithwil" class="fab fa-github"></a></li>
+  <li><a href="https://www.linkedin.com/in/willy-randika-wardhoyo-692a04302/" class="fab fa-linkedin"></a></li>
 </ul>
 <ul class="menu">
 
@@ -247,7 +258,7 @@
 <li><a href="#service">service</a></li>
 <li><a href="#contact">contact</a></li>
 </ul>
-<p>  &copy;2023 <strong><span>Willdev</span></strong>. All Rights Reserved</p>
+<p>  &copy;2024 <strong><span>codewithwil</span></strong>. All Rights Reserved</p>
 </footer>
 </div>
         <!-- footer end  -->
@@ -266,7 +277,6 @@
  <!-- function dark/light mode end  -->
     <!-- JavaScript Files -->
 
-    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
     <!-- validate js  -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
@@ -301,7 +311,7 @@
 <script>
 
 var typed = new Typed('#element', {
-  strings: ['Web developer'],
+  strings: ['Fullstack Web Developer', 'Software engineer'],
   typeSpeed: 100,
   loop: true
 });

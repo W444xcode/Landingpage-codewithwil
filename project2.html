@@ -3,135 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my project</title>
+    <title>My Project</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
 </head>
 <body>
-        <!-- function dark/light mode start  -->
-        <main>
-            <!-- dark/light start  -->
-            <div class="big-wrapper light">
-                <header>
-                    <div class="container">
-                      <div class="logo">
-                        <img src="./img/logo.png" alt="Logo" />
-                        <h3>Willcode</h3>
-                      </div>
-          
-                      <div class="links">
-                        <ul>
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="index.html#about">About</a></li>
-                          <li><a href="index.html#project">project</a></li>
-                          <li><a href="index.html#service">service</a></li>
-                          <li><a href="index.html#contact" class="button">contact</a></li>
-                          
-                    
-                        </ul>
-                      </div>
-          
-                      <div class="overlay"></div>
-          
-                      <div class="hamburger-menu">
-                        <div class="bar"></div>
-                      </div>
-                    </div>
-                  </header>
+    <!-- Main Wrapper -->
+    <main>
+  
+        <!-- Project Section -->
+        <div class="container mt-4">
+            <section id="breadcrumbs" class="breadcrumbs mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Project Details</li>
+                </ol>
+            </section>
 
-                
-             
+            <section class="project-section">
                 <div class="row">
-                    <div class="container">
-                      <section id="breadcrumbs" class="breadcrumbs">
-                        <div class="container">
-                  
-                          <ol>
-                            <li><a href="index.html">Home</a></li>
-                            <li>Project Details</li>
-                            <a href=""></a>
-                          </ol>
-                          <h2>Project Details</h2>
-                  
+                    <!-- Project Image -->
+                    <div class="col-lg-7 d-flex align-items-stretch mb-4">
+                        <div class="w-100">
+                            <img src="img/galery/schoolify.jpeg" class="img-fluid" alt="Project Image" />
                         </div>
-                      </section>
-                  
-                     <div class="project-section" id="project1">
-                      
-                        <div class="project-start">
-                          <div class="title">
-                            <!-- <h1 class="text-center">about</h1> -->
-                          </div>
-                          <div class="project-content-sec">
-                            <div class="row">
-                              <div class="col-lg-8 d-flex align-items-center ">
-                                <div class="project-content-img">
-                                <img src="img/galery/web2.jpg" class="" alt=""/>
-                              </div>
-                            </div>
-                              <div class="col-lg-4 pt-6 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-                           
-                                <div class="project-info ">
-                                    <h3 class="text-center">Project information</h3>
-                                <ul>
-                                    <li><strong>category</strong>: -</li>
-                                    <li><strong>Client</strong>: -</li>
-                                    <li><strong>Project date</strong>: soon</li>
-                                    <li><strong>Project URL</strong>:
-                                       <a href="">soon</a></li>
-                                </ul>
-                            </div>
-                            <div class="project-details">
-                                <h3 class="text-center">Project details</h3>
-                                <p>
-                                    belum ada project mungkin nanti akan ada project baru yang
-                                    saya kerjakan
-                                </p>
-                            </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="footer">
-                    <footer>
-                      <div class="waves">
-                        <div class="wave" id="wave1"></div>
-                        <div class="wave" id="wave2"></div>
-                        <div class="wave" id="wave3"></div>
-                        <div class="wave" id="wave4"></div>
-                      </div>
-                      <ul class="social_icon">
-                        <li><a href="https://www.instagram.com/willy_randika/" class="fab fa-instagram"></a></li>
-                        <li><a href="https://github.com/W444xcode" class="fab fa-github"></a></li>
-                        <li><a href="https://twitter.com/willy_randika" class="fab fa-twitter"></a></li>
-                    </ul>
-                    <ul class="menu">
-                    
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#about">about</a></li>
-                    <li><a href="index.html#project">project</a></li>
-                    <li><a href="index.html#service">service</a></li>
-                    <li><a href="index.html#contact">contact</a></li>
-                  
-                    </ul>
-                    <p>  &copy;2023 <strong><span>Willdev</span></strong>. All Rights Reserved</p>
-                    </footer>
                     </div>
 
-                <!-- darkmode -->
-                <div class="container">
-                    <span class="toggle-btn">
-                         
-                              </span>
-                            </div>
+                    <!-- Project Information and Details -->
+                    <div class="col-lg-5 d-flex flex-column">
+                        <!-- Project Information -->
+                        <div class="bg-light p-4 rounded shadow-sm mb-4">
+                            <h3 class="text-center mb-3">Project Information</h3>
+                            <ul class="list-unstyled">
+                                <li><strong>Category:</strong> LMS(Learn Management System)</li>
+                                <li><strong>Client:</strong> team-schoolify</li>
+                                <li><strong>Project Date:</strong> Mei 01, 2024</li>
+                                <li><strong>Project URL:</strong> 
+                                    <a href="https://allincompany.vercel.app/" target="_blank" rel="noopener noreferrer">https://Allincompany.vercel.app/</a>
+                                </li>
+                            </ul>
                         </div>
-                </main>
 
-                <script src="https://kit.fontawesome.com/a81368914c.js"></script>
-                <script src="js/app.js"></script>
+                        <!-- Project Details -->
+                        <div class="bg-light p-4 rounded shadow-sm">
+                            <h3 class="text-center mb-3">Project Details</h3>
+                            <p>
+                                Pada project ini saya berposisi sebagai backend developer untuk pengerjaan aplikasi lms ini, pada website ini saya menggunakan bahasa pemrogramman php dengan framework laravel.
+                                Aplikasi ini berguna untuk suatu sekolah, dimana sekolah ini menggunakan sistem lms yang mempermudah untuk mengatur data siswa dan guru.
+                                Seperti absensi siswa, penilaian siswa, dll 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          <footer>
+            <div class="waves">
+              <div class="wave" id="wave1"></div>
+              <div class="wave" id="wave2"></div>
+              <div class="wave" id="wave3"></div>
+              <div class="wave" id="wave4"></div>
+            </div>
+            <ul class="social_icon">
+            <li><a href="https://www.instagram.com/codewithly/" class="fab fa-instagram"></a></li>
+            <li><a href="https://github.com/codewithwil" class="fab fa-github"></a></li>
+            <li><a href="https://www.linkedin.com/in/willy-randika-wardhoyo-692a04302/" class="fab fa-linkedin"></a></li>
+          </ul>
+          <ul class="menu">
+          
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#project">project</a></li>
+          <li><a href="#service">service</a></li>
+          <li><a href="#contact">contact</a></li>
+          </ul>
+          <p>  &copy;2024 <strong><span>codewithwil</span></strong>. All Rights Reserved</p>
+          </footer>
+          </div>
+        
+        <!-- Darkmode Toggle -->
+        <div class="container">
+            <span class="toggle-btn"></span>
+        </div>
+    </main>
+
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

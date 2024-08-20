@@ -12,7 +12,7 @@
   --lightOne: #919191;
   --lightTwo: #222121;
   --Bgutm: #01fe87;
-  --warna: #32cf71;
+  --warna: #64bcf4;
 }
 
 .dark {
@@ -48,60 +48,71 @@ body {
 
 /* animations start*/
 
-section .animate{
-  transition: 1s;
-} 
-
-.sec-1 .animate{
+/* .sec-1 animasi muncul dari kiri */
+.sec-1 .animate {
   transform: translateX(-100%);
-} 
-
-.sec-1.show-animate .animate{
-  transform: translateX(0);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
-.sec-2 .animate{
-  transform: translateX(100%);
-} 
-
-.sec-2.show-animate .animate{
+.sec-1.show-animate .animate {
   transform: translateX(0);
+  opacity: 1;
 }
 
-.sec-3 .animate .galery img{
+/* .sec-2 animasi muncul dari kanan */
+.sec-2 .animate {
+  transform: translate3d(100%, 0, 0);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.sec-2.show-animate .animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* .sec-3 animasi gambar dari kiri */
+.sec-3 .animate .galery img {
   max-width: 400px;
   margin: 0 30px;
   transform: translateX(-100%);
-  transition-delay: calc(.2s * var(--i));
-} 
-
-.sec-3.show-animate .galery img{
-  transform: translateX(0);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
-.sec-4 .showRight-animate{
+.sec-3.show-animate .animate .galery img {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* .sec-4 animasi dengan background */
+.sec-4 .showRight-animate {
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
   background-color: #ffffff;
-  transition: 1s;
-  transition-delay: calc(.2s * var(--i));
-} 
+  transform: scale(1);
+  transition: width 1s ease-out;
+}
 
-.sec-4.show-animate .showRight-animate{
+.sec-4.show-animate .showRight-animate {
   width: 0;
 }
 
-.sec-5 .animate{
-  transform: scale(.7);
-} 
-
-.sec-5.show-animate .animate{
-  transform: scale(1);
+/* .sec-5 animasi skala */
+.sec-5 .animate {
+  transform: scale(0.7);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
+.sec-5.show-animate .animate {
+  transform: scale(1);
+  opacity: 1;
+}
 
 
 
@@ -334,13 +345,18 @@ header.sticky .hamburger-menu .bar {
   text-transform: uppercase;
   font-weight: 800;
 }
-
 .text {
   position: relative;
-  font-size: 3rem;
+  width: 100%;
+  font-size: 2.5rem;
   color: #252839;
   -webkit-text-stroke: 0.3vw #383d52;
   text-transform: uppercase;
+  text-align: center;
+}
+
+.hidden-text {
+  visibility: hidden; /* Atau use opacity: 0; */
 }
 
 .text::before {
@@ -348,43 +364,40 @@ header.sticky .hamburger-menu .bar {
   position: absolute;
   top: 0;
   left: 0;
-  width: 0;
   height: 100%;
-  color: var(--Bgutm);
+  color: var(--warna, #f39c12); /* Pastikan variabel warna ada fallback-nya */
   -webkit-text-stroke: 0vw #383d52;
-  border-right: 2px solid var(--Bgutm);
+  border-right: 2px solid var(--warna, #f39c12);
   overflow: hidden;
+  white-space: nowrap;
+  width: 0; /* Mulai dengan width 0 untuk animasi mengetik */
   animation: animates 6s linear infinite;
 }
 
 @keyframes animates {
-  0%,
-  10%,
-  100% {
+  0%, 10% {
     width: 0;
   }
-  70%,
-  90% {
-    width: 42%;
+  70%, 90% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
   }
 }
 
 @media screen and (max-width: 870px) {
   .text {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
-  @keyframes animates {
-    0%,
-    10%,
-    100% {
-      width: 0;
-    }
-    70%,
-    90% {
-      width: 50%;
-    }
+
+  .text::before {
+    width: 100%; 
+    animation: animates 6s linear infinite;
   }
 }
+
+
 
 .txt {
   color: var(--lightOne);
@@ -403,8 +416,6 @@ header.sticky .hamburger-menu .bar {
   transform: translate(15%, 25px);
   left: -100px;
 }
-
-
 .button-home {
   display: inline-block;
   text-decoration: none;
@@ -417,8 +428,18 @@ header.sticky .hamburger-menu .bar {
 }
 
 .button-home:hover {
-  background-color: var(--hoverColor);
+  background-color: #2da6f1;
   transform: scale(1) !important;
+}
+@media (max-width: 768px) {
+  .home-person {
+    width: 80%; /* Sesuaikan lebar gambar */
+    transform: translate(0, 0); /* Hapus transformasi yang ada */
+    left: 0; /* Reset posisi kiri */
+    margin: 0 auto; /* Pusatkan gambar secara horizontal */
+    margin-bottom: -200px;
+    display: block; /* Pastikan gambar diatur sebagai blok untuk penerapan margin */
+  }
 }
 
 /* home end  */
@@ -536,6 +557,7 @@ header.sticky .hamburger-menu .bar {
   .txt {
     font-size: 0.95rem;
     margin: 1.4rem 0 1.5rem;
+    margin-top: -10px;
   }
 
   .person {
@@ -575,7 +597,6 @@ header.sticky .hamburger-menu .bar {
 
 /* about start  */
 .about-page {
-  padding-top: 20px;
   margin-bottom: 100px;
   display: flex;
   justify-content: center;
@@ -592,14 +613,25 @@ header.sticky .hamburger-menu .bar {
   padding-top: 50px;
 }
 
-.about .about-content .box{
-  display:flex;
-  width: 100%; 
+.box {
+  display: flex;
+  width: 100%;
   height: 400px;
   background: #fff;
-  border-radius: 3px;
+  border-radius: 6px;
   margin: 0 20px 20px;
+  overflow: hidden; 
 }
+
+.box img.person {
+  display: block; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 5px;
+  object-position: center; 
+}
+
 
 @media screen and (max-width:992px){
   .about .about-content .box{
@@ -721,7 +753,7 @@ header.sticky .hamburger-menu .bar {
   display: inline-block;
   padding: 10px 20px;
   margin: 5px;
-  background-color: var(--Bgutm);
+  background-color: var(--warna);
   color: #fff;
   font-style: 12px;
   font-weight: 800;
@@ -744,30 +776,34 @@ header.sticky .hamburger-menu .bar {
   color: var(--dark);
 }
 
-.galery{
+.galery {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  gap: 8px; /* Jarak antara elemen */
 }
 
-.galery .isi{
+.galery .isi {
   position: relative;
-  margin: 4px;
-  width: calc(33.33% - 8px);
+  width: calc(33.33% - 8px); /* Lebar dengan jarak antar elemen */
   overflow: hidden;
-  cursor: pointer;
 }
-.isi img{
+
+.isi img {
+  width: 100%;
+  height: 100%; /* Tinggi yang diinginkan */
+  object-fit: cover; /* Mengisi area tanpa merubah proporsi gambar */
+  object-position: center; /* Posisikan gambar di tengah jika dipotong */
+  transition: transform 0.3s ease; /* Transition untuk efek hover */
+}
+
+.galery .isi:hover img {
+  transform: scale(1.1); /* Zoom in slightly on hover */
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: 0.3s;
+  filter: brightness(0.9); /* Optional: Sedikit menggelapkan gambar saat hover */
 }
 
-.galery .isi:hover img{
-  transform: scale(1.15);
-}
 
 .isi .overlay{
   position: absolute;
@@ -894,7 +930,7 @@ header.sticky .hamburger-menu .bar {
 .service .card .content a {
   /* position: relative; */
   display: inline-block;
-  padding: 8px 20px;
+  padding: 4px 8px;
   margin-top: 45px;
   background: #fff;
   color: #000;
@@ -1071,7 +1107,7 @@ textarea::-webkit-scrollbar-thumb {
     text-align: center;
   }
   .contact-details form textarea{
-    min-width: 300px;
+    min-width: 290px;
     max-width: 300px;
     min-height: 40px;
     max-height: 40px;
@@ -1237,17 +1273,12 @@ footer .wave#wave4{
 /* footer end  */
 
 /* breadcumbs */
-.breadcrumbs {
-  padding: 15px 0;
-  min-height: 40px;
-  margin-top: 72px;
+.breadcrumb {
+  padding: 0.75rem 1rem; 
+  position: relative;
+  z-index: 10; 
 }
 
-@media (max-width: 992px) {
-  .breadcrumbs {
-    margin-top: 72px;
-  }
-}
 
 .breadcrumbs h2 {
   font-size: 28px;
@@ -1261,7 +1292,7 @@ footer .wave#wave4{
   list-style: none;
   padding: 0 0 10px 0;
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .breadcrumbs ol li+li {
@@ -1274,11 +1305,32 @@ footer .wave#wave4{
   color: #4668a2;
   content: "/";
 }
+
+@media (max-width: 768px) {
+  .breadcrumb {
+    padding: 0.5rem 0.75rem; /* Adjust padding for mobile */
+  }
+
+  .breadcrumbs h2 {
+    font-size: 20px; /* Smaller heading font size */
+  }
+
+  .breadcrumbs ol {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
+
+  .breadcrumbs ol li+li {
+    padding-left: 5px; /* Reduce space between items */
+  }
+
+  .breadcrumbs ol li+li::before {
+    padding-right: 5px; /* Reduce separator padding */
+  }
+}
 /* .breadcrumbs end  */
 
 /* project section  */
 .project-section{
-  margin-top: -130px;
   display: flex;
   justify-content: center;
   align-items: center;
